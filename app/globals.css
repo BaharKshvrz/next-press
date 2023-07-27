@@ -1,27 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+   @apply bg-slate-50
 }
+
+/* General styles */
+.max-width {
+   @apply max-w-[1440px] mx-auto;
+}
+
+.padding-x {
+   @apply sm:px-16 px-6;
+}
+
+.padding-y {
+   @apply py-4
+}
+
+/* Footer styles */
+.footer__links {
+    @apply w-full flex-1 flex justify-between items-center gap-5 sm:gap-20
+ }
+
+ .footer__link {
+    @apply flex flex-col gap-3 text-left
+ }
+
+ .footer__copyrights{
+    @apply w-full sm:px-16 px-10 py-10 border-t border-gray-100 flex justify-between items-center flex-col sm:flex-row;
+ }
+
+ .footer__copyrights-link {
+    @apply flex justify-center sm:flex-row flex-col text-base font-normal py-2 sm:py-0 gap-3 sm:gap-10
+ }
